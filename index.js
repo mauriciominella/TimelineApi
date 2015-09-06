@@ -33,7 +33,7 @@ app.get('/cool', function(req, res){
 });*/
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:meanapp')
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:meanapp')
 mongoose.connection.once('open', function(){
 	
 	// Load the models
